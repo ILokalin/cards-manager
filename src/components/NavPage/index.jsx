@@ -12,7 +12,7 @@ export const NavPage = ({ data }) => {
   const card = useRef(emptyCardTemplate);
 
   useEffect(() => {
-    if (cardShowIndex === null) {
+    if (cardShowIndex === null && data.length > 0) {
       setCardShowIndex(0);
     }
     // eslint-disable-next-line
@@ -56,10 +56,13 @@ export const NavPage = ({ data }) => {
       </h2>
       {CardFactory[card.current.type](card.current)}
       <div className="d-flex justify-content-between">
-        <button className="btn mt-4" onClick={previusButtonHandler}>
+        <button
+          className="btn btn-secondary mt-4"
+          onClick={previusButtonHandler}
+        >
           Предыдущий
         </button>
-        <button className="btn mt-4" onClick={nextButtonHandler}>
+        <button className="btn btn-secondary mt-4" onClick={nextButtonHandler}>
           Следующий
         </button>
       </div>

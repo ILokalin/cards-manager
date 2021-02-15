@@ -1,4 +1,4 @@
-import { SET_ACTIVE, GET_CARDS } from "./actions";
+import { SET_ACTIVE, GET_CARDS, SHOW_ALERT, REMOVE_ALERT } from "./actions";
 
 const Handler = {
   [SET_ACTIVE]: (state, payload) => {
@@ -9,12 +9,25 @@ const Handler = {
       }),
     };
   },
-  [GET_CARDS]: (state, payload) => ({ ...state, cards: [...payload] }),
+  [GET_CARDS]: (state, payload) => ({
+    ...state,
+    isDataLoaded: true,
+    cards: [...payload],
+  }),
+  [SHOW_ALERT]: (state, payload) => ({
+    ...state,
+    isAlert: true,
+    alertMessage: payload,
+  }),
+  [REMOVE_ALERT]: (state) => ({ ...state, isAlert: false }),
   DEFAULT: (state) => state,
 };
 
 const initialize = {
   cards: [],
+  isDataLoaded: false,
+  isAlert: false,
+  alertMessage: "",
 };
 
 export const reducer = (state = initialize, { type, payload }) => {

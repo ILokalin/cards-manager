@@ -1,0 +1,138 @@
+{
+  "colleges":[
+    {
+      "id":"CLG_00001",
+      "name":"Уральская государственная юридическая академия"
+    },
+    {
+      "id":"CLG_00002",
+      "name":"Уральский федеральный университет"
+    },
+    {
+      "id":"CLG_00003",
+      "name":"Уральский государственный экономический университет"
+    }
+  ],
+  "members": [
+    {
+      "id":"RBN_738782",
+      "name":"Иван",
+      "surename":"Леонов",
+      "type":"stud",
+      "collegeId":"CLG_00001",
+      "course": 3
+    },
+    {
+      "id":"RBN_7387432",
+      "name":"Мария",
+      "surename":"Актямова",
+      "type":"stud",
+      "collegeId":"CLG_00003",
+      "course": 1
+    },
+    {
+      "id":"RBN_738272",
+      "name":"Ольга",
+      "surename":"Семенова",
+      "type":"stud",
+      "collegeId":"CLG_00002",
+      "course": 4
+    },
+    {
+      "id":"RBN_783472",
+      "name":"Константин",
+      "surename":"Основин",
+      "type":"stud",
+      "collegeId":"CLG_00003",
+      "course": 2
+    },
+    {
+      "id":"RBN_737362",
+      "name":"Евгения",
+      "surename":"Веретенникова",
+      "type":"stud",
+      "collegeId":"CLG_00001",
+      "course": 1
+    },
+    {
+      "id":"RBN_734872",
+      "name":"Маргарита",
+      "surename":"Зубова",
+      "type":"stud",
+      "collegeId":"CLG_00002",
+      "course": 4
+    },
+    {
+      "id":"RBN_730837",
+      "name":"Леонид",
+      "surename":"Кочетов",
+      "type":"stud",
+      "collegeId":"CLG_00001",
+      "course": 1
+    },
+    {
+      "id":"RBN_732352",
+      "name":"Светлана",
+      "surename":"Анисимова",
+      "type":"stud",
+      "collegeId":"CLG_00002",
+      "course": 3
+    },
+    {
+      "id":"RBN_843842",
+      "name":"Ольга",
+      "surename":"Светлакова",
+      "type":"stud",
+      "collegeId":"CLG_00001",
+      "course": 3
+    },
+    {
+      "id":"RBN_627637",
+      "name":"Руслан",
+      "surename":"Ивойлов",
+      "type":"stud",
+      "collegeId":"CLG_00003",
+      "course": 2
+    },
+    {
+      "id":"RBN_743282",
+      "name":"Анастасия",
+      "surename":"Павлова",
+      "type":"stud",
+      "collegeId":"CLG_00003",
+      "course": 2
+    },
+    {
+      "id":"RBN_257772",
+      "name":"Лев",
+      "surename":"Пахомов",
+      "type":"stud",
+      "collegeId":"CLG_00001",
+      "course": 3
+    },
+    {
+      "id":"RBN_739202",
+      "name":"Дарья",
+      "surename":"Агаева",
+      "type":"stud",
+      "collegeId":"CLG_00002",
+      "course": 2
+    },
+    {
+      "id":"RBN_285681",
+      "name":"Владимир",
+      "surename":"Ермаков",
+      "type":"stud",
+      "collegeId":"CLG_00003",
+      "course": 3
+    },
+    {
+      "id":"RBN_438709",
+      "name":"Савелий",
+      "surename":"Черный",
+      "type":"stud",
+      "collegeId":"CLG_00002",
+      "course": 1
+    }
+  ]
+}
