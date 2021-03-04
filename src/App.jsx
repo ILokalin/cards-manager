@@ -1,16 +1,17 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getCards, showAlert } from "redux/actions";
+import { getCards } from "./redux";
 import { Header } from "components/Header";
-import { NavPage } from "components/NavPage";
+import { CardSection } from "components/CardSection";
 import { ListPage } from "components/ListPage";
 import { Alert } from "components/Alert";
 
 export function App() {
   const dispatch = useDispatch();
-  const cardsList = useSelector((store) => {
-    return store.cards;
-  });
+  const cards =
+    useSelector((store) => {
+      return store.cards;
+    }) || [];
 
   const [isAlert, alertMessage] = useSelector(({ isAlert, alertMessage }) => [
     isAlert,
@@ -27,8 +28,8 @@ export function App() {
       <Header />
       <div className="container">
         {isAlert ? <Alert message={alertMessage} /> : null}
-        <NavPage data={cardsList} />
-        <ListPage data={cardsList} />
+        <CardSection card={cards.find((card) => card.isActive)} />
+        <ListPage data={cards} />
       </div>
     </div>
   );

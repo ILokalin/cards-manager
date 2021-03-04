@@ -1,4 +1,11 @@
-import { SET_ACTIVE, GET_CARDS, SHOW_ALERT, REMOVE_ALERT } from "./actions";
+import {
+  SET_ACTIVE,
+  GET_CARDS,
+  SHOW_ALERT,
+  REMOVE_ALERT,
+  NAV_FORWARD,
+  NAV_BACKWARD,
+} from "./types";
 
 const Handler = {
   [SET_ACTIVE]: (state, payload) => {
@@ -9,11 +16,36 @@ const Handler = {
       }),
     };
   },
-  [GET_CARDS]: (state, payload) => ({
-    ...state,
-    isDataLoaded: true,
-    cards: [...payload],
-  }),
+  [NAV_FORWARD]: (state) => {
+    const { length } = state.cards;
+    const currentIndex = state.cards.findIndex((card) => card.isActive);
+    const newIndex = currentIndex === length - 1 ? 0 : currentIndex + 1;
+    return {
+      ...state,
+      cards: state.cards.map((card, indx) => {
+        return { ...card, isActive: indx === newIndex ? true : false };
+      }),
+    };
+  },
+  [NAV_BACKWARD]: (state) => {
+    const { length } = state.cards;
+    const currentIndex = state.cards.findIndex((card) => card.isActive);
+    const newIndex = currentIndex === 0 ? length - 1 : currentIndex - 1;
+    return {
+      ...state,
+      cards: state.cards.map((card, indx) => {
+        return { ...card, isActive: indx === newIndex ? true : false };
+      }),
+    };
+  },
+  [GET_CARDS]: (state, payload) => {
+    payload[0].isActive = true;
+    return {
+      ...state,
+      isDataLoaded: true,
+      cards: [...payload],
+    };
+  },
   [SHOW_ALERT]: (state, payload) => ({
     ...state,
     isAlert: true,

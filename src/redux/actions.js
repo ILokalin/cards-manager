@@ -1,10 +1,15 @@
 import { http, dataAdapter } from "utils/http";
+import {
+  SET_ACTIVE,
+  GET_CARDS,
+  SHOW_ALERT,
+  REMOVE_ALERT,
+  NAV_FORWARD,
+  NAV_BACKWARD,
+} from "./types";
 
 const URN_STRING = "members?_expand=college";
-export const SET_ACTIVE = "NAV/SET_ACTIVE";
-export const GET_CARDS = "CONNECT/GET_CARDS";
-export const SHOW_ALERT = "ALERT/SHOW";
-export const REMOVE_ALERT = "ALERT/REMOVE_ALERT";
+
 let lastTimeout = null;
 
 const isActionSuccess = ({ isError, message }, dispatch) => {
@@ -19,6 +24,18 @@ export const setActive = (id) => {
   return {
     type: SET_ACTIVE,
     payload: id,
+  };
+};
+
+export const forward = () => {
+  return {
+    type: NAV_FORWARD,
+  };
+};
+
+export const backward = () => {
+  return {
+    type: NAV_BACKWARD,
   };
 };
 
