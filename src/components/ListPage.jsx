@@ -16,7 +16,7 @@ const style = {
 export const ListPage = ({ data }) => {
   return (
     <div className="mt-4">
-      <h2>Список регистрационных карточек</h2>
+      <h2 className="mb-3">Список регистрационных карточек</h2>
       <div className="border-top border-bottom" style={style.listContainer}>
         <table className="col-12 m-0 table table-hover">
           <thead>
