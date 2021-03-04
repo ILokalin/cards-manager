@@ -30,7 +30,7 @@ export const NavPage = ({ data }) => {
       document.removeEventListener("keydown", keydownHandler);
     };
     // eslint-disable-next-line
-  }, []);
+  }, [data]);
 
   const showCard = (action) => {
     setCardShowIndex((prevIndex) => action(prevIndex, data.length));
@@ -50,7 +50,7 @@ export const NavPage = ({ data }) => {
   };
 
   return (
-    <div className="NavPage pt-5">
+    <div className="pt-5">
       <h2 className="text-center">
         Карточка&nbsp;{getCardType(card.current).genitive}
       </h2>
