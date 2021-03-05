@@ -1,4 +1,4 @@
-export const Card = (props) => {
+export const CardTemplate = (props) => {
   const { firstName, lastName } = props;
 
   return (
