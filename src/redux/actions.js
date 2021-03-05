@@ -1,11 +1,12 @@
 import { http, dataAdapter } from "utils/http";
 import {
   SET_ACTIVE,
-  GET_CARDS,
-  SHOW_ALERT,
-  REMOVE_ALERT,
   NAV_FORWARD,
   NAV_BACKWARD,
+  GET_CARDS,
+  SET_SORT,
+  SHOW_ALERT,
+  REMOVE_ALERT,
 } from "./types";
 
 const URN_STRING = "members?_expand=college";
@@ -49,6 +50,13 @@ export const getCards = () => {
         payload: dataAdapter(response.data),
       });
     }
+  };
+};
+
+export const setSort = (key) => {
+  return {
+    type: SET_SORT,
+    payload: key,
   };
 };
 

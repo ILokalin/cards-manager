@@ -1,11 +1,13 @@
 import {
   SET_ACTIVE,
   GET_CARDS,
+  SET_SORT,
   SHOW_ALERT,
   REMOVE_ALERT,
   NAV_FORWARD,
   NAV_BACKWARD,
 } from "./types";
+import { sortAZ, sortZA } from "utils/sort";
 
 const Handler = {
   [SET_ACTIVE]: (state, payload) => {
@@ -31,6 +33,7 @@ const Handler = {
     const { length } = state.cards;
     const currentIndex = state.cards.findIndex((card) => card.isActive);
     const newIndex = currentIndex === 0 ? length - 1 : currentIndex - 1;
+
     return {
       ...state,
       cards: state.cards.map((card, indx) => {
@@ -39,11 +42,29 @@ const Handler = {
     };
   },
   [GET_CARDS]: (state, payload) => {
+    payload.sort(state.sort.direction(state.sort.key));
     payload[0].isActive = true;
+
     return {
       ...state,
       isDataLoaded: true,
       cards: [...payload],
+    };
+  },
+  [SET_SORT]: (state, payload) => {
+    let { key, direction, isAZDirection } = state.sort;
+    if (state.sort.key === payload) {
+      direction = [sortZA, sortAZ][Number(!isAZDirection)];
+      isAZDirection = !isAZDirection;
+    } else {
+      direction = sortAZ;
+      isAZDirection = true;
+    }
+
+    return {
+      ...state,
+      cards: [...state.cards.sort(direction(key))],
+      sort: { key: payload, direction, isAZDirection },
     };
   },
   [SHOW_ALERT]: (state, payload) => ({
@@ -56,10 +77,16 @@ const Handler = {
 };
 
 const initialize = {
+  data: [],
   cards: [],
   isDataLoaded: false,
   isAlert: false,
   alertMessage: "",
+  sort: {
+    key: "id",
+    direction: sortAZ,
+    isAZDirection: true,
+  },
 };
 
 export const reducer = (state = initialize, { type, payload }) => {
