@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { setActive } from "./../redux";
+import { setActive } from "redux/actions";
 import { useDispatch } from "react-redux";
 
 const style = {

@@ -1,4 +1,4 @@
-import { CardTemplate } from "./CardTemplate";
+import { CardTemplate } from "components/CardTemplate";
 
 export const CardCover = (props) => {
   return (

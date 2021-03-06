@@ -8,7 +8,7 @@ export const SortIcon = ({ isKey }) => {
     [false, SECONDARY],
     [true, isKey ? PRIMARY : SECONDARY],
   ]);
-  const isAZDirection = useSelector(({ sort }) => sort.isAZDirection);
+  const isAZDirection = useSelector(({ data }) => data.sort.isAZDirection);
 
   return (
     <svg

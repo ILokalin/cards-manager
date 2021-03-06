@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { forward, backward } from "../redux";
-import { KeyMapHandler } from "../utils/keyMap";
+import { forward, backward } from "redux/actions";
+import { KeyMapHandler } from "utils/keyMap";
 
 export const CardNavBar = () => {
   const dispatch = useDispatch();

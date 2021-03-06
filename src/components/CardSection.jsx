@@ -1,5 +1,5 @@
 import { getCardType, CardFactory, emptyCardTemplate } from "utils/card";
-import { CardNavBar } from "./CardNavBar";
+import { CardNavBar } from "components/CardNavBar";
 
 export const CardSection = ({ card = emptyCardTemplate }) => {
   return (

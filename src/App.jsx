@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getCards } from "./redux";
+import { getCards } from "redux/actions";
 import { Header } from "components/Header";
 import { CardSection } from "components/CardSection";
 import { TableSection } from "components/TableSection";
@@ -9,13 +9,13 @@ import { Alert } from "components/Alert";
 export function App() {
   const dispatch = useDispatch();
   const cards =
-    useSelector((store) => {
-      return store.cards;
+    useSelector(({ data }) => {
+      return data.cards;
     }) || [];
 
-  const [isAlert, alertMessage] = useSelector(({ isAlert, alertMessage }) => [
-    isAlert,
-    alertMessage,
+  const [isAlert, alertMessage] = useSelector(({ alert }) => [
+    alert.isAlert,
+    alert.alertMessage,
   ]);
 
   useEffect(() => {

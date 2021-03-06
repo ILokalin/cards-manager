@@ -7,7 +7,7 @@ import {
   SET_SORT,
   SHOW_ALERT,
   REMOVE_ALERT,
-} from "./types";
+} from "redux/types";
 
 const URN_STRING = "members?_expand=college";
 
