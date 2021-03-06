@@ -1,71 +1,25 @@
 import {
-  SET_ACTIVE,
   GET_CARDS,
-  SET_SORT,
-  NAV_FORWARD,
   NAV_BACKWARD,
+  NAV_FORWARD,
+  SET_ACTIVE,
+  SET_SORT,
 } from "redux/types";
-import { sortAZ, sortZA } from "utils/sort";
+import {
+  getCards,
+  navBackward,
+  navForward,
+  setActive,
+  setSort,
+} from "./dataReducersFunctions.js";
+import { sortAZ } from "utils/sort";
 
 const Handler = {
-  [SET_ACTIVE]: (state, payload) => {
-    return {
-      ...state,
-      cards: state.cards.map((card) => {
-        return { ...card, isActive: card.id === payload ? true : false };
-      }),
-    };
-  },
-  [NAV_FORWARD]: (state) => {
-    const { length } = state.cards;
-    const currentIndex = state.cards.findIndex((card) => card.isActive);
-    const newIndex = currentIndex === length - 1 ? 0 : currentIndex + 1;
-    return {
-      ...state,
-      cards: state.cards.map((card, indx) => {
-        return { ...card, isActive: indx === newIndex ? true : false };
-      }),
-    };
-  },
-  [NAV_BACKWARD]: (state) => {
-    const { length } = state.cards;
-    const currentIndex = state.cards.findIndex((card) => card.isActive);
-    const newIndex = currentIndex === 0 ? length - 1 : currentIndex - 1;
-
-    return {
-      ...state,
-      cards: state.cards.map((card, indx) => {
-        return { ...card, isActive: indx === newIndex ? true : false };
-      }),
-    };
-  },
-  [GET_CARDS]: (state, payload) => {
-    payload.sort(state.sort.direction(state.sort.key));
-    payload[0].isActive = true;
-
-    return {
-      ...state,
-      isDataLoaded: true,
-      cards: [...payload],
-    };
-  },
-  [SET_SORT]: (state, payload) => {
-    let { direction, isAZDirection } = state.sort;
-
-    if (state.sort.key === payload) {
-      direction = [sortZA, sortAZ][Number(!isAZDirection)];
-      isAZDirection = !isAZDirection;
-    } else {
-      direction = sortAZ;
-      isAZDirection = true;
-    }
-
-    return {
-      ...state,
-      cards: [...state.cards.sort(direction(payload))],
-      sort: { key: payload, direction, isAZDirection },
-    };
-  },
+  [GET_CARDS]: getCards,
+  [NAV_BACKWARD]: navBackward,
+  [NAV_FORWARD]: navForward,
+  [SET_ACTIVE]: setActive,
+  [SET_SORT]: setSort,
   DEFAULT: (state) => state,
 };
 
