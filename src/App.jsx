@@ -5,6 +5,7 @@ import { Header } from "components/Header";
 import { CardSection } from "components/CardSection";
 import { TableSection } from "components/TableSection";
 import { Alert } from "components/Alert";
+import { setVisibility } from "utils/setVisibility";
 
 export function App() {
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ export function App() {
     <div className="page">
       <Header />
       <div className="container">
-        {isAlert ? <Alert message={alertMessage} /> : null}
+        {setVisibility(isAlert, <Alert message={alertMessage} />)}
         <CardSection card={cards.find((card) => card.isActive)} />
         <TableSection cards={cards} />
       </div>

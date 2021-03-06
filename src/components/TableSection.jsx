@@ -2,6 +2,7 @@ import { useRef, useEffect, createRef } from "react";
 import { TableRow } from "components/TableRow";
 import { TableHead } from "components/TableHead";
 import { scroll } from "utils/scroll";
+import { setVisibility } from "utils/setVisibility";
 
 const style = {
   listContainer: {
@@ -34,9 +35,9 @@ export const TableSection = ({ cards }) => {
           <TableHead ref={thead} />
           <tbody>
             {cards.map((card) =>
-              card.isActive ? (
-                <TableRow {...card} key={card.id} ref={activeRow} />
-              ) : (
+              setVisibility(
+                card.isActive,
+                <TableRow {...card} key={card.id} ref={activeRow} />,
                 <TableRow {...card} key={card.id} />
               )
             )}
