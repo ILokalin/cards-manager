@@ -18,7 +18,7 @@ export const TableHead = forwardRef((props, ref) => {
   const key = useSelector(({ data }) => data.sort.key);
 
   const headClickHandler = ({ target }) => {
-    dispatch(setSort(target.dataset.name));
+    dispatch(setSort(target.closest("th").dataset.name));
   };
 
   return (
