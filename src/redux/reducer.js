@@ -52,7 +52,8 @@ const Handler = {
     };
   },
   [SET_SORT]: (state, payload) => {
-    let { key, direction, isAZDirection } = state.sort;
+    let { direction, isAZDirection } = state.sort;
+
     if (state.sort.key === payload) {
       direction = [sortZA, sortAZ][Number(!isAZDirection)];
       isAZDirection = !isAZDirection;
@@ -63,7 +64,7 @@ const Handler = {
 
     return {
       ...state,
-      cards: [...state.cards.sort(direction(key))],
+      cards: [...state.cards.sort(direction(payload))],
       sort: { key: payload, direction, isAZDirection },
     };
   },

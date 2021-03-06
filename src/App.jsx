@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getCards } from "./redux";
 import { Header } from "components/Header";
 import { CardSection } from "components/CardSection";
-import { ListPage } from "components/ListPage";
+import { TableSection } from "components/TableSection";
 import { Alert } from "components/Alert";
 
 export function App() {
@@ -29,7 +29,7 @@ export function App() {
       <div className="container">
         {isAlert ? <Alert message={alertMessage} /> : null}
         <CardSection card={cards.find((card) => card.isActive)} />
-        <ListPage data={cards} />
+        <TableSection cards={cards} />
       </div>
     </div>
   );
