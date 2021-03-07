@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { setSort } from "redux/actions";
+import { useDispatch } from "react-redux";
 import { SortIcon } from "components/SortIcon";
+import { setSort, useSortKey } from "state/ducks/cards";
 
 const style = {
   th: {
@@ -15,7 +15,7 @@ const style = {
 
 export const TableHead = forwardRef((props, ref) => {
   const dispatch = useDispatch();
-  const key = useSelector(({ data }) => data.sort.key);
+  const key = useSortKey(({ data }) => data.sort.key);
 
   const headClickHandler = ({ target }) => {
     dispatch(setSort(target.closest("th").dataset.name));

@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { removeAlert } from "redux/actions";
+import { removeAlert } from "state/ducks/events";
 
 const style = {
   alert: {

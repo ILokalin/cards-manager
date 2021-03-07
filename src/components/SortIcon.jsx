@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useSortDirection } from "state/ducks/cards";
 
 const PRIMARY = "--bs-primary";
 const SECONDARY = "--bs-secondary";
@@ -8,7 +8,7 @@ export const SortIcon = ({ isKey }) => {
     [false, SECONDARY],
     [true, isKey ? PRIMARY : SECONDARY],
   ]);
-  const isAZDirection = useSelector(({ data }) => data.sort.isAZDirection);
+  const isAZDirection = useSortDirection(({ data }) => data.sort.isAZDirection);
 
   return (
     <svg

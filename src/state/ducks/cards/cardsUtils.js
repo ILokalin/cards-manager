@@ -1,6 +1,6 @@
 import { sortAZ, sortZA } from "utils/sort";
 
-export const setSort = (state, payload) => {
+export const setSortState = (state, payload) => {
   let { direction, isAZDirection } = state.sort;
   if (state.sort.key === payload) {
     direction = [sortZA, sortAZ][Number(!isAZDirection)];
@@ -10,55 +10,53 @@ export const setSort = (state, payload) => {
     isAZDirection = true;
   }
 
-  return {
-    ...state,
-    cards: [...state.cards.sort(direction(payload))],
-    sort: { key: payload, direction, isAZDirection },
-  };
+  return state
+    .set("cards", [...state.cards.sort(direction(payload))])
+    .set("sort", "key", payload)
+    .set("direction", direction)
+    .set("isAZDirection", isAZDirection);
 };
 
-export const setActive = (state, payload) => {
-  return {
-    ...state,
-    cards: state.cards.map((card) => {
+export const selectCardState = (state, payload) => {
+  return state.set(
+    "cards",
+    state.cards.map((card) => {
       return { ...card, isActive: card.id === payload ? true : false };
-    }),
-  };
+    })
+  );
 };
 
-export const navForward = (state) => {
+export const navForwardState = (state) => {
   const { length } = state.cards;
   const currentIndex = state.cards.findIndex((card) => card.isActive);
   const newIndex = currentIndex === length - 1 ? 0 : currentIndex + 1;
 
-  return {
-    ...state,
-    cards: state.cards.map((card, indx) => {
+  return state.set(
+    "cards",
+    state.cards.map((card, indx) => {
       return { ...card, isActive: indx === newIndex ? true : false };
-    }),
-  };
+    })
+  );
 };
 
-export const navBackward = (state) => {
+export const navBackwardState = (state) => {
   const { length } = state.cards;
   const currentIndex = state.cards.findIndex((card) => card.isActive);
   const newIndex = currentIndex === 0 ? length - 1 : currentIndex - 1;
 
-  return {
-    ...state,
-    cards: state.cards.map((card, indx) => {
+  return state.set(
+    "cards",
+    state.cards.map((card, indx) => {
       return { ...card, isActive: indx === newIndex ? true : false };
-    }),
-  };
+    })
+  );
 };
 
-export const getCards = (state, payload) => {
+export const getCardsState = (state, payload) => {
   payload.sort(state.sort.direction(state.sort.key));
   payload[0].isActive = true;
 
-  return {
-    ...state,
-    isDataLoaded: true,
-    cards: [...payload],
-  };
+  return state.set("cards", [...payload]).set("isLoading", false);
 };
+
+export const startLoadingState = (state) => state.set("isLoading", true);

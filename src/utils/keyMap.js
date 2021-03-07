@@ -1,4 +1,4 @@
-import { forward, backward } from "redux/actions";
+import { forward, backward } from "state/ducks/cards";
 
 export const PREVIUS = "ArrowLeft";
 export const NEXT = "ArrowRight";

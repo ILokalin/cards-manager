@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { setActive } from "redux/actions";
+import { selectCard } from "state/ducks/cards";
 import { useDispatch } from "react-redux";
 
 const style = {
@@ -13,7 +13,7 @@ export const TableRow = forwardRef(
   ({ id, firstName, lastName, isActive }, ref) => {
     const dispatch = useDispatch();
     const rowSelectHandler = () => {
-      dispatch(setActive(id));
+      dispatch(selectCard(id));
     };
 
     return (
