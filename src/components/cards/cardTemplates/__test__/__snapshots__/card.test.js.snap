@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Cards Basic card is rendered 1`] = `
+<DocumentFragment>
+  <article
+    class="card p-4"
+  >
+    <h3
+      class="card-title"
+    >
+       
+    </h3>
+  </article>
+</DocumentFragment>
+`;
+
 exports[`Cards CardsCover is rendered 1`] = `
 <DocumentFragment>
   <article

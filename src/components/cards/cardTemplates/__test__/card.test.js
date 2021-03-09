@@ -1,11 +1,11 @@
 import { render } from "@testing-library/react";
-import { Card } from "../card";
+import { CardCommon } from "../cardCommon";
 import { CardCover } from "../cardCover";
 import { CardStudent } from "../cardStudent";
 
 describe("Cards", () => {
   it("Basic card is rendered", () => {
-    const { asFragment } = render(<Card />);
+    const { asFragment } = render(<CardCommon />);
     const snapshot = asFragment();
     expect(snapshot).toMatchSnapshot();
   });
