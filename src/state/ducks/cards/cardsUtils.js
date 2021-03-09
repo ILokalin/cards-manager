@@ -12,9 +12,7 @@ export const setSortState = (state, payload) => {
 
   return state
     .set("cards", [...state.cards.sort(direction(payload))])
-    .set("sort", "key", payload)
-    .set("direction", direction)
-    .set("isAZDirection", isAZDirection);
+    .set("sort", { key: payload, direction, isAZDirection });
 };
 
 export const selectCardState = (state, payload) => {

@@ -3,12 +3,12 @@ import { useSortDirection } from "state/ducks/cards";
 const PRIMARY = "--bs-primary";
 const SECONDARY = "--bs-secondary";
 
-export const SortIcon = ({ isKey }) => {
+export const SortDirectionIcon = ({ isKey }) => {
   const styleMap = new Map([
     [false, SECONDARY],
     [true, isKey ? PRIMARY : SECONDARY],
   ]);
-  const isAZDirection = useSortDirection(({ data }) => data.sort.isAZDirection);
+  const isAZDirection = useSortDirection();
 
   return (
     <svg

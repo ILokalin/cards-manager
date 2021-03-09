@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getCards, useCards } from "state/ducks/cards";
 import { useAlert } from "state/ducks/events";
-import { Header } from "components/Header";
-import { CardSection } from "components/CardSection";
-import { TableSection } from "components/TableSection";
-import { Alert } from "components/Alert";
+import { Header } from "components/page/header";
+import { CardSection } from "components/cards/cardSection";
+import { TableSection } from "components/cards/tableSection";
+import { Alert } from "components/events/alert";
 import { setVisibility } from "utils/setVisibility";
 
 export function App() {

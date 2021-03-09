@@ -11,7 +11,7 @@ export const Header = (params) => {
     <header className="header" style={style.header}>
       <nav className="navbar navbar-light bg-primary">
         <div className="container">
-          <span className="navbar-brand mb-0 h1 text-light">CardNav</span>
+          <span className="navbar-brand mb-0 h1 text-light">CardManager</span>
         </div>
       </nav>
     </header>

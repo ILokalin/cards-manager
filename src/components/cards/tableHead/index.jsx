@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import { useDispatch } from "react-redux";
-import { SortIcon } from "components/SortIcon";
+import { SortDirectionIcon } from "components/cards/sortDirectionIcon";
 import { setSort, useSortKey } from "state/ducks/cards";
 
 const style = {
@@ -30,7 +30,7 @@ export const TableHead = forwardRef((props, ref) => {
           data-name="id"
           onClick={headClickHandler}
         >
-          <SortIcon isKey={key === "id"} />
+          <SortDirectionIcon isKey={key === "id"} />
           id
         </th>
         <th
@@ -39,7 +39,7 @@ export const TableHead = forwardRef((props, ref) => {
           data-name="firstName"
           onClick={headClickHandler}
         >
-          <SortIcon isKey={key === "firstName"} />
+          <SortDirectionIcon isKey={key === "firstName"} />
           Имя
         </th>
         <th
@@ -48,7 +48,7 @@ export const TableHead = forwardRef((props, ref) => {
           data-name="lastName"
           onClick={headClickHandler}
         >
-          <SortIcon isKey={key === "lastName"} />
+          <SortDirectionIcon isKey={key === "lastName"} />
           Фамилия
         </th>
       </tr>

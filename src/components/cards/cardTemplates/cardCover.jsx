@@ -1,9 +1,9 @@
-import { CardTemplate } from "components/CardTemplate";
+import { CardCommon } from "./cardCommon";
 
 export const CardCover = (props) => {
   return (
-    <CardTemplate {...props}>
+    <CardCommon {...props}>
       <p className="card-text mt-4">Нет данных для генерации карты</p>
-    </CardTemplate>
+    </CardCommon>
   );
 };

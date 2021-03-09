@@ -1,9 +1,9 @@
-import { CardTemplate } from "components/CardTemplate";
+import { CardCommon } from "./cardCommon";
 
 export const CardStudent = (props) => {
   const { course, college } = props;
   return (
-    <CardTemplate {...props}>
+    <CardCommon {...props}>
       <p className="card-text mt-4">
         Учебное заведение:&nbsp;
         <span className="fw-bold">{college}</span>
@@ -12,6 +12,6 @@ export const CardStudent = (props) => {
         Студент:&nbsp;
         <span className="fw-bold">{course}-го курса</span>
       </p>
-    </CardTemplate>
+    </CardCommon>
   );
 };

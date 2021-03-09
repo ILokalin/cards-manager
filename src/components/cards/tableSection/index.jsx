@@ -1,6 +1,6 @@
 import { useRef, useEffect, createRef } from "react";
-import { TableRow } from "components/TableRow";
-import { TableHead } from "components/TableHead";
+import { TableRow } from "components/cards/tableRow";
+import { TableHead } from "components/cards/tableHead";
 import { scroll } from "utils/scroll";
 import { setVisibility } from "utils/setVisibility";
 

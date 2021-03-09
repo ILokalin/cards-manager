@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cards CardsCover is rendered 1`] = `
+<DocumentFragment>
+  <article
+    class="card p-4"
+  >
+    <h3
+      class="card-title"
+    >
+       
+    </h3>
+    <p
+      class="card-text mt-4"
+    >
+      Нет данных для генерации карты
+    </p>
+  </article>
+</DocumentFragment>
+`;
+
+exports[`Cards CardsStudent is rendered 1`] = `
+<DocumentFragment>
+  <article
+    class="card p-4"
+  >
+    <h3
+      class="card-title"
+    >
+       
+    </h3>
+    <p
+      class="card-text mt-4"
+    >
+      Учебное заведение: 
+      <span
+        class="fw-bold"
+      />
+    </p>
+    <p
+      class="card-text"
+    >
+      Студент: 
+      <span
+        class="fw-bold"
+      >
+        -го курса
+      </span>
+    </p>
+  </article>
+</DocumentFragment>
+`;
+
+exports[`Cards CardsTemplate is rendered 1`] = `
+<DocumentFragment>
+  <article
+    class="card p-4"
+  >
+    <h3
+      class="card-title"
+    >
+       
+    </h3>
+  </article>
+</DocumentFragment>
+`;
