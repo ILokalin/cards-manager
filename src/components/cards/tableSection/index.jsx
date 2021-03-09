@@ -6,7 +6,7 @@ import { setVisibility } from "utils/setVisibility";
 
 const style = {
   listContainer: {
-    maxHeight: "40vh",
+    maxHeight: "50vh",
     overflowY: "auto",
   },
 };
@@ -25,7 +25,7 @@ export const TableSection = ({ cards }) => {
 
   return (
     <section className="mt-4 mb-4">
-      <h2 className="mb-3">Список регистрационных карточек</h2>
+      <h2 className="mb-2 h4">Список регистрационных карточек</h2>
       <div
         className="border-top border-bottom"
         style={style.listContainer}

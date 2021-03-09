@@ -58,6 +58,7 @@ export default function reducer(
 const cardsSelector = (state) => state[moduleName].cards;
 const sortDirectionSelector = (state) => state[moduleName].sort.isAZDirection;
 const sortKeySelector = (state) => state[moduleName].sort.key;
+const isLoadingSelector = (state) => state[moduleName].isLoading;
 
 /**
  * Hooks
@@ -73,6 +74,10 @@ export const useSortDirection = () => {
 
 export const useSortKey = () => {
   return useSelector(sortKeySelector);
+};
+
+export const useLoading = () => {
+  return useSelector(isLoadingSelector);
 };
 
 /**
@@ -92,8 +97,11 @@ const isActionSuccess = ({ isError, message }, dispatch) => {
  */
 
 export const getCards = () => async (dispatch) => {
-  const response = await http(URN_STRING);
+  dispatch({
+    type: START_LOADING,
+  });
 
+  const response = await http(URN_STRING);
   if (isActionSuccess(response, dispatch)) {
     dispatch({
       type: GET_CARDS,
@@ -125,5 +133,11 @@ export const setSort = (key) => {
   return {
     type: SET_SORT,
     payload: key,
+  };
+};
+
+export const startLoading = () => {
+  return {
+    type: START_LOADING,
   };
 };
