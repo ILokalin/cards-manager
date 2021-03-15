@@ -1,18 +1,20 @@
 import { sortAZ, sortZA } from "utils/sort";
 
+const sortSelector = (isAZDirection) => {
+  return [sortZA, sortAZ][Number(isAZDirection)];
+};
+
 export const setSortState = (state, payload) => {
-  let { direction, isAZDirection } = state.sort;
+  let { isAZDirection } = state.sort;
   if (state.sort.key === payload) {
-    direction = [sortZA, sortAZ][Number(!isAZDirection)];
     isAZDirection = !isAZDirection;
   } else {
-    direction = sortAZ;
     isAZDirection = true;
   }
 
   return state
-    .set("cards", [...state.cards.sort(direction(payload))])
-    .set("sort", { key: payload, direction, isAZDirection });
+    .set("cards", [...state.cards.sort(sortSelector(isAZDirection)(payload))])
+    .set("sort", { key: payload, isAZDirection });
 };
 
 export const selectCardState = (state, payload) => {
@@ -51,7 +53,7 @@ export const navBackwardState = (state) => {
 };
 
 export const getCardsState = (state, payload) => {
-  payload.sort(state.sort.direction(state.sort.key));
+  payload.sort(sortSelector(state.sort.isAZDirection)(state.sort.key));
   payload[0].isActive = true;
 
   return state.set("cards", [...payload]).set("isLoading", false);

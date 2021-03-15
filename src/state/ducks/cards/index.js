@@ -1,6 +1,5 @@
 import { Record } from "immutable";
 import { useSelector } from "react-redux";
-import { sortAZ } from "utils/sort";
 import { http, dataAdapter } from "utils/http";
 import { URN_STRING } from "config";
 import { showAlert } from "state/ducks/events";
@@ -28,7 +27,6 @@ const ReducerRecord = Record({
   isLoading: false,
   sort: {
     key: "id",
-    direction: sortAZ,
     isAZDirection: true,
   },
 });
