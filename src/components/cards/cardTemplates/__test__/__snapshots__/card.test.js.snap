@@ -64,17 +64,3 @@ exports[`Cards CardsStudent is rendered 1`] = `
   </article>
 </DocumentFragment>
 `;
-
-exports[`Cards CardsTemplate is rendered 1`] = `
-<DocumentFragment>
-  <article
-    class="card p-4"
-  >
-    <h3
-      class="card-title"
-    >
-       
-    </h3>
-  </article>
-</DocumentFragment>
-`;

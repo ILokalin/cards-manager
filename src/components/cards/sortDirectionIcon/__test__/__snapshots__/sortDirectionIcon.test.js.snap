@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sort direction icon should render icon with isKey true and AZ direction 1`] = `
+<DocumentFragment>
+  <svg
+    height="25"
+    version="1.1"
+    viewBox="0 0 16 16"
+    width="25"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M11 7h-6l3-4z"
+      fill="var(--bs-primary)"
+    />
+    <path
+      d="M5 9h6l-3 4z"
+      fill="var(--bs-secondary)"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`Sort direction icon should render icon with isKey true and ZA direction 1`] = `
+<DocumentFragment>
+  <svg
+    height="25"
+    version="1.1"
+    viewBox="0 0 16 16"
+    width="25"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M11 7h-6l3-4z"
+      fill="var(--bs-secondary)"
+    />
+    <path
+      d="M5 9h6l-3 4z"
+      fill="var(--bs-primary)"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`Sort direction icon should render icon with sKey true 1`] = `
+<DocumentFragment>
+  <svg
+    height="25"
+    version="1.1"
+    viewBox="0 0 16 16"
+    width="25"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M11 7h-6l3-4z"
+      fill="var(--bs-primary)"
+    />
+    <path
+      d="M5 9h6l-3 4z"
+      fill="var(--bs-secondary)"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`Sort direction icon should render icon with sKey true and sortRevirse 1`] = `
+<DocumentFragment>
+  <svg
+    height="25"
+    version="1.1"
+    viewBox="0 0 16 16"
+    width="25"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M11 7h-6l3-4z"
+      fill="var(--bs-secondary)"
+    />
+    <path
+      d="M5 9h6l-3 4z"
+      fill="var(--bs-primary)"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`Sort direction icon should render icon without props 1`] = `
+<DocumentFragment>
+  <svg
+    height="25"
+    version="1.1"
+    viewBox="0 0 16 16"
+    width="25"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M11 7h-6l3-4z"
+      fill="var(--bs-secondary)"
+    />
+    <path
+      d="M5 9h6l-3 4z"
+      fill="var(--bs-secondary)"
+    />
+  </svg>
+</DocumentFragment>
+`;
