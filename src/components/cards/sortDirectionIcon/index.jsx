@@ -23,7 +23,7 @@ export const SortDirectionIcon = ({ isKey }) => {
         d="M11 7h-6l3-4z"
       ></path>
       <path
-        fill={`var(${styleMap.get(isAZDirection)})`}
+        fill={`var(${styleMap.get(!!isAZDirection)})`}
         d="M5 9h6l-3 4z"
       ></path>
     </svg>
